@@ -16,8 +16,19 @@ public class GoogleDriveController {
 	@Autowired
 	GoogleDriveService googleDriveService;
 	
-	@RequestMapping(value = "/file_10", method = RequestMethod.DELETE)
-	public void StartApp() throws IOException {
-			googleDriveService.StartApp();
+	@RequestMapping(value = "/show", method = RequestMethod.GET)
+	public void showFiles() throws IOException {
+			googleDriveService.showFiles();
 	}
+	
+	@RequestMapping(value = "/create", method = RequestMethod.POST)
+	public void createGoogleDocFile() throws IOException {
+			googleDriveService.createGoogleDocFile();
+	}
+	
+	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+	public void deleteFile() throws IOException {
+			googleDriveService.deleteFile();
+	}
+
 }
